@@ -16,13 +16,18 @@ Service Stopper is a Python script built with Tkinter that allows you to stop Wi
 ### Prerequisites
 
 - Python 3.x installed on your system. You can download it from the [official Python website](https://www.python.org/downloads/).
+- `pywin32` module installed. You can install it using pip:
+
+    ```bash
+    pip install pywin32
+    ```
 
 ### Steps
 
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/Fatvallon/Service-Stopper.git
+    git clone https://github.com/yourusername/servicestopper.git
     ```
 
 2. **Navigate to the project directory**:
