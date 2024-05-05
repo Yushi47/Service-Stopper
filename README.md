@@ -20,40 +20,32 @@ Service Stopper is a Python script built with Tkinter that allows you to stop Wi
 
 ### Steps
 
-1. **Clone the repository**:
+1. **Install python on windows**:
+
+    You can install python with the command below. Open a command prompt as an administrator and run the following command to install
 
     ```batch
-    git clone https://github.com/yourusername/servicestopper.git
+    choco install python
     ```
 
-2. **Navigate to the project directory**:
-
-    ```batch
-    cd servicestopper
-    ```
-
-3. **Install required dependencies**:
-
-    You can install the required dependencies using pip. Run the following command:
-
-    ```batch
-    pip install -r requirements.txt
-    ```
-
-4. **Install pywin32 module**:
+2. **Install pywin32 module**:
 
     This script utilizes the `pywin32` module to interact with Windows services. If you don't have it installed, you can install it using pip:
 
     ```batch
-    pip install pywin32
+    python -m pip install --upgrade pywin32
+    ```
+and/or the below if didn't work
+    ```batch
+    python Scripts/pywin32_postinstall.py -install
     ```
 
-5. **Run the script**:
+3. **Run the script from the batch file**:
 
-    Execute the following command in your command prompt to start the Service Stopper:
+    Execute the following batch file:
 
     ```batch
-    python service_stopper.py
+    run_as_admin_exp.bat
     ```
 
 ## Usage
