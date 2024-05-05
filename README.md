@@ -35,7 +35,8 @@ Service Stopper is a Python script built with Tkinter that allows you to stop Wi
     ```batch
     python -m pip install --upgrade pywin32
     ```
-and/or the below if didn't work
+   and/or the below if didn't work
+
     ```batch
     python Scripts/pywin32_postinstall.py -install
     ```
