@@ -43,6 +43,21 @@ def execute_command(command, result_text, success_msg, error_msg):
         logger.error(f"Error executing command: {e}")
         result_text.insert(tk.END, error_msg.format(e), ERROR_COLOR)
 
+# Function to start a service
+def start_service(service_name, result_text):
+    logger.info(f"Attempting to start service: {service_name}")
+    try:
+        start_output = subprocess.run(["sc", "start", service_name], capture_output=True, text=True)
+        if start_output.returncode == 0:
+            result_text.insert(tk.END, f"The {service_name} service has started successfully.\n", SUCCESS_COLOR)
+        elif start_output.returncode == 1056:
+            result_text.insert(tk.END, f"The {service_name} service is already running.\n", WARNING_COLOR)
+        else:
+            result_text.insert(tk.END, f"Failed to start the {service_name} service: {start_output.stderr}\n", ERROR_COLOR)
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Error starting service: {e}")
+        result_text.insert(tk.END, f"Failed to start the {service_name} service: {e}\n", ERROR_COLOR)
+
 # Function to stop a service
 def stop_service(service_name, result_text):
     logger.info(f"Attempting to stop service: {service_name}")
@@ -68,6 +83,17 @@ def set_manual(service_name, result_text):
     except subprocess.CalledProcessError as e:
         logger.error(f"Error setting service to Manual start: {e}")
         result_text.insert(tk.END, f"Failed to set the {service_name} service to Manual start: {e}\n", ERROR_COLOR)
+
+# Function to set a service to automatic start
+def set_automatic(service_name, result_text):
+    logger.info(f"Setting service {service_name} to Automatic start")
+    try:
+        execute_command(["sc", "config", service_name, "start=", "auto"], result_text,
+                        f"The {service_name} service has been set to Automatic start.\n",
+                        f"Failed to set the {service_name} service to Automatic start: {{}}\n")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Error setting service to Automatic start: {e}")
+        result_text.insert(tk.END, f"Failed to set the {service_name} service to Automatic start: {e}\n", ERROR_COLOR)
 
 # Function to select all services
 def select_all():
@@ -223,12 +249,23 @@ update_services_list()
 button_frame = tk.Frame(window, bg=BG_COLOR)
 button_frame.pack(side=tk.RIGHT, padx=10, pady=10, fill=tk.Y)
 
-# Create buttons
+# Create buttons for starting and stopping services
+start_button = tk.Button(button_frame, text="Start", command=lambda: handle_selected_services(result_text, selected_services, start_service, "Starting services"), bg="#1F1F23", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
+start_button.pack(pady=5, fill=tk.X)
+
 stop_button = tk.Button(button_frame, text="Stop", command=lambda: handle_selected_services(result_text, selected_services, stop_service, "Stopping services"), bg="#1F1F23", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
 stop_button.pack(pady=5, fill=tk.X)
 
+# Separator between start/stop and manual/automatic buttons
+separator = tk.Frame(button_frame, height=2, bg="gray")
+separator.pack(fill=tk.X, padx=10, pady=10)
+
+# Create buttons for setting service start type
 set_manual_button = tk.Button(button_frame, text="Set to Manual", command=lambda: handle_selected_services(result_text, selected_services, set_manual, "Setting services to Manual start"), bg="#1F1F23", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
 set_manual_button.pack(pady=5, fill=tk.X)
+
+set_automatic_button = tk.Button(button_frame, text="Set to Automatic", command=lambda: handle_selected_services(result_text, selected_services, set_automatic, "Setting services to Automatic start"), bg="#1F1F23", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
+set_automatic_button.pack(pady=5, fill=tk.X)
 
 separator = tk.Frame(button_frame, height=2, bg="gray")
 separator.pack(fill=tk.X, padx=10, pady=10)
@@ -246,7 +283,7 @@ separator.pack(fill=tk.X, padx=10, pady=10)
 copy_logs_button = tk.Button(button_frame, text="Copy Logs", command=lambda: copy_logs(result_text), bg="#1F1F23", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
 copy_logs_button.pack(pady=5, fill=tk.X)
 
-clear_logs_button = tk.Button(button_frame, text="Clear Logs", command=lambda: clear_logs(result_text), bg="#850000", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
+clear_logs_button = tk.Button(button_frame, text="Clear Logs", command=lambda: clear_logs(result_text), bg="#1F1F23", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
 clear_logs_button.pack(pady=5, fill=tk.X)
 
 separator = tk.Frame(button_frame, height=2, bg="gray")
@@ -255,9 +292,6 @@ separator.pack(fill=tk.X, padx=10, pady=10)
 # Create the "Recommended" button
 recommended_button = tk.Button(button_frame, text="Recommended", command=select_recommended_services, bg="#006400", fg="white", font=BUTTON_FONT, borderwidth=2, relief="groove", highlightthickness=0)
 recommended_button.pack(pady=5, fill=tk.X)
-
-separator = tk.Frame(button_frame, height=2, bg="gray")
-separator.pack(fill=tk.X, padx=10, pady=10)
 
 # Create a frame for result text and scrollbar
 result_frame = tk.Frame(window, bg=BG_COLOR)
