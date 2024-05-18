@@ -68,7 +68,7 @@ The following services are marked as recommended:
 
 <p align="Center">
 <a href="#">
-<img src="https://cdn.discordapp.com/attachments/269609642395566093/1237165686783217674/image.png?ex=663ca215&is=663b5095&hm=3ddd78722d38d30664ba8049fa2de7a996561abf10eae2ec4efd83545b368f2f&" width="1000" height="300" alt="logo"/>
+<img src="https://cdn.discordapp.com/attachments/516495873807482890/1241188486875320470/image.png?ex=66494a5b&is=6647f8db&hm=b174440cd33d0e60875a32865f78e50f1784f0e74ef722b2099e5790bc221665&" width="1000" height="300" alt="logo"/>
 </a>
 </p>
 
