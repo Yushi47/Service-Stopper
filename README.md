@@ -1,10 +1,12 @@
 # Service Stopper
 
-This script provides a graphical user interface (GUI) to stop and configure services on a Windows system using tkinter.
+This script provides a graphical user interface (GUI) to manage services on a Windows system using tkinter. It allows you to start, stop, and configure service start types.
 
 ## Features
-- Stop services
+- Start services and indicate if a service is already running
+- Stop services and indicate if a service is already stopped
 - Set services to manual start
+- Set services to automatic start
 - Select all services
 - Clear selection
 - Select recommended services
@@ -21,7 +23,7 @@ This script provides a graphical user interface (GUI) to stop and configure serv
 
 ## How to Use
 
-1. **Install python on windows**:
+1. **Install Python on Windows**:
 
     You can install python with the command below. Open a command prompt as an administrator and run the following command to install
 
@@ -68,7 +70,7 @@ The following services are marked as recommended:
 
 <p align="Center">
 <a href="#">
-<img src="https://cdn.discordapp.com/attachments/516495873807482890/1241188486875320470/image.png?ex=66494a5b&is=6647f8db&hm=b174440cd33d0e60875a32865f78e50f1784f0e74ef722b2099e5790bc221665&" width="1000" height="300" alt="logo"/>
+<img src="https://cdn.discordapp.com/attachments/516495873807482890/1241367121791815770/image.png?ex=6649f0b9&is=66489f39&hm=86a2d7fee77693ffe541aa340843e22f1494c3a41285c9d01325ea6616e6a829&" width="1000" height="300" alt="logo"/>
 </a>
 </p>
 
