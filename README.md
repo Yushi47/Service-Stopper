@@ -1,24 +1,25 @@
 # Service Stopper
 
-Service Stopper is a Python script built with Tkinter that allows you to stop Windows services easily through a graphical user interface (GUI). It provides a convenient way to select services from a list and perform actions like stopping them or setting them to manual start.
+This script provides a graphical user interface (GUI) to stop and configure services on a Windows system using tkinter.
 
 ## Features
-
-- Stop selected services
-- Set selected services to manual start
-- Add new services with their descriptions
-- Remove existing services
+- Stop services
+- Set services to manual start
+- Select all services
+- Clear selection
+- Select recommended services
+- Search for services
 - Copy logs to clipboard
 - Clear logs
 
-## Installation
+## Dependencies
+- Python 3
+- tkinter (Python standard library)
+- subprocess (Python standard library)
+- threading (Python standard library)
+- logging (Python standard library)
 
-### Prerequisites
-
-- Python 3.x installed on your Windows system. You can download it from the [official Python website](https://www.python.org/downloads/).
-- Ensure that you are running the script on a Windows machine.
-
-### Steps
+## How to Use
 
 1. **Install python on windows**:
 
@@ -46,21 +47,30 @@ Service Stopper is a Python script built with Tkinter that allows you to stop Wi
     Execute the following batch file:
 
     ```batch
-    run_as_admin_exp.bat
+    run_as_admin_ui_2.0.bat
     ```
+4. Use the GUI to select the desired services and perform actions such as stopping, setting to manual start, etc.
+5. Use the search feature to filter services.
+6. Use the "Recommended" button to select recommended services.
 
-## Usage
+## Recommended Services
+The following services are marked as recommended:
+- DPS
+- WdiServiceHost
+- WdiSystemHost
+- BITS
+- wuauserv
+- WaaSMedicSvc
+- XblAuthManager
+- XboxNetApiSvc
+- ClickToRunSvc
+- Spooler
 
-- Upon running the script, a graphical user interface (GUI) will appear.
-- You can select services from the list and perform actions using the buttons provided.
-- The result of each action will be displayed in the logs area.
-- You can add new services by entering their names and descriptions, or remove existing services.
-- Logs can be copied to the clipboard or cleared using the respective buttons.
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests to improve the script.
+<p align="Center">
+<a href="#">
+<img src="https://cdn.discordapp.com/attachments/269609642395566093/1237165686783217674/image.png?ex=663ca215&is=663b5095&hm=3ddd78722d38d30664ba8049fa2de7a996561abf10eae2ec4efd83545b368f2f&" width="1000" height="300" alt="logo"/>
+</a>
+</p>
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
