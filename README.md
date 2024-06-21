@@ -70,7 +70,7 @@ The following services are marked as recommended:
 
 <p align="Center">
 <a href="#">
-<img src="https://cdn.discordapp.com/attachments/516495873807482890/1241367121791815770/image.png?ex=6649f0b9&is=66489f39&hm=86a2d7fee77693ffe541aa340843e22f1494c3a41285c9d01325ea6616e6a829&" width="1000" height="300" alt="logo"/>
+<img src="https://cdn.discordapp.com/attachments/679063158933028911/1253816101175824497/image.png?ex=66773abd&is=6675e93d&hm=53409ee80bc1eab8007bd86177f1ad45b50266ac146ffffdba629f34ca82495a&" width="1000" height="300" alt="logo"/>
 </a>
 </p>
 
