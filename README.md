@@ -70,7 +70,7 @@ The following services are marked as recommended:
 
 <p align="Center">
 <a href="#">
-<img src="https://cdn.discordapp.com/attachments/679063158933028911/1253816101175824497/image.png?ex=66773abd&is=6675e93d&hm=53409ee80bc1eab8007bd86177f1ad45b50266ac146ffffdba629f34ca82495a&" width="1000" height="300" alt="logo"/>
+<img src="[https://cdn.discordapp.com/attachments/679063158933028911/1253816101175824497/image.png?ex=66773abd&is=6675e93d&hm=53409ee80bc1eab8007bd86177f1ad45b50266ac146ffffdba629f34ca82495a&](https://i.gyazo.com/169474cf7529eb3767be0e0b045ba1ef.png)" width="1000" height="300" alt="logo"/>
 </a>
 </p>
 
