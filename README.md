@@ -70,7 +70,7 @@ The following services are marked as recommended:
 
 <p align="Center">
 <a href="#">
-<img src="["https://i.gyazo.com/169474cf7529eb3767be0e0b045ba1ef.png" width="1000" height="300" alt="logo"/>
+<img src="https://i.gyazo.com/169474cf7529eb3767be0e0b045ba1ef.png" width="1000" height="300" alt="logo"/>
 </a>
 </p>
 
