@@ -1,0 +1,3 @@
+psutil>=5.9.0
+# tkinter is usually included with Python on Windows
+# If not, it can be installed via 'pip install tk' (though rare on Windows)
